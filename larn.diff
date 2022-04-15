@@ -1,0 +1,333 @@
+diff -ruN larn.orig/action.c larn/action.c
+--- larn.orig/action.c	2021-05-02 08:50:45.000000000 -0400
++++ larn/action.c	2022-04-14 23:36:14.590860012 -0400
+@@ -9,7 +9,6 @@
+  */
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: action.c,v 1.2 2021/05/02 12:50:45 rillig Exp $");
+ #endif				/* not lint */
+ #include <stdlib.h>
+ #include <unistd.h>
+diff -ruN larn.orig/bill.c larn/bill.c
+--- larn.orig/bill.c	2011-08-29 16:30:37.000000000 -0400
++++ larn/bill.c	2022-04-14 23:36:14.590860012 -0400
+@@ -34,7 +34,6 @@
+ #if 0
+ static char sccsid[] = "@(#)bill.c	5.2 (Berkeley) 5/28/91";
+ #else
+-__RCSID("$NetBSD: bill.c,v 1.11 2011/08/29 20:30:37 joerg Exp $");
+ #endif
+ #endif /* not lint */
+ 
+diff -ruN larn.orig/config.c larn/config.c
+--- larn.orig/config.c	2008-01-28 00:38:53.000000000 -0500
++++ larn/config.c	2022-04-14 23:36:14.590860012 -0400
+@@ -10,7 +10,6 @@
+  */
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: config.c,v 1.6 2008/01/28 05:38:53 dholland Exp $");
+ #endif /* not lint */
+ 
+ #include "header.h"
+diff -ruN larn.orig/create.c larn/create.c
+--- larn.orig/create.c	2012-06-19 01:30:43.000000000 -0400
++++ larn/create.c	2022-04-14 23:36:14.590860012 -0400
+@@ -4,7 +4,6 @@
+ 
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: create.c,v 1.12 2012/06/19 05:30:43 dholland Exp $");
+ #endif				/* not lint */
+ 
+ #include "header.h"
+diff -ruN larn.orig/data.c larn/data.c
+--- larn.orig/data.c	2008-02-03 15:11:04.000000000 -0500
++++ larn/data.c	2022-04-14 23:36:14.590860012 -0400
+@@ -34,7 +34,6 @@
+ #if 0
+ static char     sccsid[] = "@(#)data.c	5.3 (Berkeley) 5/13/91";
+ #else
+-__RCSID("$NetBSD: data.c,v 1.13 2008/02/03 20:11:04 dholland Exp $");
+ #endif
+ #endif /* not lint */
+ 
+diff -ruN larn.orig/diag.c larn/diag.c
+--- larn.orig/diag.c	2012-06-19 01:30:43.000000000 -0400
++++ larn/diag.c	2022-04-14 23:36:14.591860023 -0400
+@@ -3,7 +3,6 @@
+ /* diag.c		Larn is copyrighted 1986 by Noah Morgan. */
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: diag.c,v 1.13 2012/06/19 05:30:43 dholland Exp $");
+ #endif				/* not lint */
+ 
+ #include <sys/types.h>
+diff -ruN larn.orig/display.c larn/display.c
+--- larn.orig/display.c	2012-06-19 01:30:43.000000000 -0400
++++ larn/display.c	2022-04-14 23:36:14.591860023 -0400
+@@ -3,7 +3,6 @@
+ /* display.c		Larn is copyrighted 1986 by Noah Morgan. */
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: display.c,v 1.10 2012/06/19 05:30:43 dholland Exp $");
+ #endif /* not lint */
+ 
+ #include "header.h"
+diff -ruN larn.orig/extern.h larn/extern.h
+--- larn.orig/extern.h	2011-08-29 16:30:37.000000000 -0400
++++ larn/extern.h	2022-04-14 23:03:45.725932877 -0400
+@@ -36,7 +36,7 @@
+ void act_open_chest(int, int);
+ 
+ /* bill.c */
+-__dead void mailbill(void);
++void mailbill(void);
+ 
+ /* config.c */
+ 
+@@ -116,7 +116,7 @@
+ void scbr(void);
+ void sncbr(void);
+ void newgame(void);
+-void lprintf(const char *, ...) __printflike(1, 2);
++void lprintf(const char *, ...);
+ void lprint(long);
+ void lwrite(char *, int);
+ long lgetc(void);
+diff -ruN larn.orig/fortune.c larn/fortune.c
+--- larn.orig/fortune.c	2009-08-12 04:04:05.000000000 -0400
++++ larn/fortune.c	2022-04-14 23:36:14.591860023 -0400
+@@ -34,7 +34,6 @@
+ #if 0
+ static char     sccsid[] = "@(#)fortune.c	5.5 (Berkeley) 6/10/91";
+ #else
+-__RCSID("$NetBSD: fortune.c,v 1.7 2009/08/12 08:04:05 dholland Exp $");
+ #endif
+ #endif				/* not lint */
+ 
+diff -ruN larn.orig/global.c larn/global.c
+--- larn.orig/global.c	2021-05-02 08:50:45.000000000 -0400
++++ larn/global.c	2022-04-14 23:36:14.592860033 -0400
+@@ -21,7 +21,6 @@
+  */
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: global.c,v 1.15 2021/05/02 12:50:45 rillig Exp $");
+ #endif /* not lint */
+ 
+ #include <string.h>
+diff -ruN larn.orig/help.c larn/help.c
+--- larn.orig/help.c	2012-06-19 01:30:43.000000000 -0400
++++ larn/help.c	2022-04-14 23:36:14.592860033 -0400
+@@ -3,7 +3,6 @@
+ /* help.c		Larn is copyrighted 1986 by Noah Morgan. */
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: help.c,v 1.9 2012/06/19 05:30:43 dholland Exp $");
+ #endif /* not lint */
+ 
+ #include <unistd.h>
+diff -ruN larn.orig/io.c larn/io.c
+--- larn.orig/io.c	2021-05-02 08:50:45.000000000 -0400
++++ larn/io.c	2022-04-14 23:36:14.592860033 -0400
+@@ -62,7 +62,6 @@
+  */
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: io.c,v 1.29 2021/05/02 12:50:45 rillig Exp $");
+ #endif /* not lint */
+ 
+ #include "header.h"
+diff -ruN larn.orig/main.c larn/main.c
+--- larn.orig/main.c	2021-05-02 08:50:45.000000000 -0400
++++ larn/main.c	2022-04-14 23:36:14.592860033 -0400
+@@ -3,7 +3,6 @@
+ /* main.c		 */
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: main.c,v 1.27 2021/05/02 12:50:45 rillig Exp $");
+ #endif				/* not lint */
+ 
+ #include <sys/types.h>
+@@ -793,7 +792,6 @@
+ 			savegame(savefilename);
+ 			wizard = 1;
+ 			died(-257);	/* save the game - doesn't return	 */
+-			__unreachable();
+ 
+ 		case 'Z':
+ 			yrepcount = 0;
+diff -ruN larn.orig/Makefile larn/Makefile
+--- larn.orig/Makefile	2011-08-16 07:19:41.000000000 -0400
++++ larn/Makefile	2022-04-14 23:06:05.830454296 -0400
+@@ -57,6 +57,7 @@
+ 
+ .include <bsd.own.mk>
+ 
++.MAIN:          all
+ PROG=	larn
+ MAN=	larn.6
+ CPPFLAGS+=-DBSD -DVER=12 -DSUBVER=0 -DNONAP -DUIDSCORE -DTERMIOS
+@@ -64,15 +65,17 @@
+ 	monster.c store.c diag.c help.c config.c nap.c bill.c scores.c \
+ 	signal.c action.c moreobj.c movem.c regen.c fortune.c savelev.c
+ DPADD=	${LIBTERMINFO}
+-LDADD=	-lterminfo
++#LDADD=	-lterminfo
++LDADD= -lbsd -lcurses
+ HIDEGAME=hidegame
+ SETGIDGAME=yes
+ 
+-.if ${MKSHARE} != "no"
++#.if ${MKSHARE} != "no"
+ DAT=larnmaze larnopts larn.help
+ FILES=${DAT:S@^@${.CURDIR}/datfiles/@g}
+-FILESDIR=/usr/share/games/larn
+-.endif
++#FILESDIR=/usr/share/games/larn
++FILESDIR=./share/larn
++#.endif
+ 
+ COPTS.display.c += -Wno-format-nonliteral
+ COPTS.monster.c += -Wno-format-nonliteral
+diff -ruN larn.orig/monster.c larn/monster.c
+--- larn.orig/monster.c	2021-05-02 08:50:45.000000000 -0400
++++ larn/monster.c	2022-04-14 23:36:14.592860033 -0400
+@@ -100,7 +100,6 @@
+  */
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: monster.c,v 1.20 2021/05/02 12:50:45 rillig Exp $");
+ #endif				/* not lint */
+ 
+ #include <string.h>
+diff -ruN larn.orig/moreobj.c larn/moreobj.c
+--- larn.orig/moreobj.c	2021-05-02 08:50:45.000000000 -0400
++++ larn/moreobj.c	2022-04-14 23:36:14.593860044 -0400
+@@ -9,7 +9,6 @@
+  */
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: moreobj.c,v 1.13 2021/05/02 12:50:45 rillig Exp $");
+ #endif				/* not lint */
+ #include <stdlib.h>
+ #include <unistd.h>
+diff -ruN larn.orig/movem.c larn/movem.c
+--- larn.orig/movem.c	2019-02-02 22:19:25.000000000 -0500
++++ larn/movem.c	2022-04-14 23:36:14.593860044 -0400
+@@ -12,7 +12,6 @@
+  */
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: movem.c,v 1.10 2019/02/03 03:19:25 mrg Exp $");
+ #endif				/* not lint */
+ 
+ #include "header.h"
+diff -ruN larn.orig/nap.c larn/nap.c
+--- larn.orig/nap.c	2012-06-19 01:30:43.000000000 -0400
++++ larn/nap.c	2022-04-14 23:36:14.593860044 -0400
+@@ -3,7 +3,6 @@
+ /* nap.c		 Larn is copyrighted 1986 by Noah Morgan. */
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: nap.c,v 1.6 2012/06/19 05:30:43 dholland Exp $");
+ #endif				/* not lint */
+ 
+ #include <unistd.h>
+diff -ruN larn.orig/object.c larn/object.c
+--- larn.orig/object.c	2019-02-02 22:19:25.000000000 -0500
++++ larn/object.c	2022-04-14 23:36:14.593860044 -0400
+@@ -4,7 +4,6 @@
+ 
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: object.c,v 1.17 2019/02/03 03:19:25 mrg Exp $");
+ #endif				/* not lint */
+ #include "header.h"
+ #include "extern.h"
+diff -ruN larn.orig/regen.c larn/regen.c
+--- larn.orig/regen.c	2012-06-19 01:30:44.000000000 -0400
++++ larn/regen.c	2022-04-14 23:36:14.594860055 -0400
+@@ -3,7 +3,6 @@
+ /* regen.c 			Larn is copyrighted 1986 by Noah Morgan. */
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: regen.c,v 1.6 2012/06/19 05:30:44 dholland Exp $");
+ #endif				/* not lint */
+ 
+ #include "header.h"
+diff -ruN larn.orig/savelev.c larn/savelev.c
+--- larn.orig/savelev.c	2012-06-19 01:30:44.000000000 -0400
++++ larn/savelev.c	2022-04-14 23:36:14.594860055 -0400
+@@ -3,7 +3,6 @@
+ /* savelev.c		 Larn is copyrighted 1986 by Noah Morgan. */
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: savelev.c,v 1.7 2012/06/19 05:30:44 dholland Exp $");
+ #endif				/* not lint */
+ #include "header.h"
+ #include "extern.h"
+diff -ruN larn.orig/scores.c larn/scores.c
+--- larn.orig/scores.c	2021-05-02 08:50:45.000000000 -0400
++++ larn/scores.c	2022-04-14 23:36:14.594860055 -0400
+@@ -26,7 +26,6 @@
+  */
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: scores.c,v 1.22 2021/05/02 12:50:45 rillig Exp $");
+ #endif				/* not lint */
+ #include <sys/types.h>
+ #include <sys/times.h>
+diff -ruN larn.orig/signal.c larn/signal.c
+--- larn.orig/signal.c	2012-06-19 01:30:44.000000000 -0400
++++ larn/signal.c	2022-04-14 23:36:14.594860055 -0400
+@@ -4,7 +4,6 @@
+ 
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: signal.c,v 1.9 2012/06/19 05:30:44 dholland Exp $");
+ #endif	/* not lint */
+ 
+ #include <signal.h>
+@@ -106,7 +105,6 @@
+ 	signal(SIGILL, sigpanic);
+ 	signal(SIGTRAP, sigpanic);
+ 	signal(SIGIOT, sigpanic);
+-	signal(SIGEMT, sigpanic);
+ 	signal(SIGFPE, sigpanic);
+ 	signal(SIGBUS, sigpanic);
+ 	signal(SIGSEGV, sigpanic);
+@@ -128,8 +126,7 @@
+ 	char            buf[128];
+ 	signal(sig, SIG_DFL);
+ 	snprintf(buf, sizeof(buf),
+-	    "\nLarn - Panic! Signal %d received [SIG%s]", sig,
+-	    sys_signame[sig]);
++	    "\nLarn - Panic! Signal %d received.", sig);
+ 	write(2, buf, strlen(buf));
+ 	sleep(2);
+ 	sncbr();
+diff -ruN larn.orig/store.c larn/store.c
+--- larn.orig/store.c	2021-05-02 08:50:45.000000000 -0400
++++ larn/store.c	2022-04-14 23:36:14.595860066 -0400
+@@ -34,7 +34,6 @@
+ #if 0
+ static char     sccsid[] = "@(#)store.c	5.4 (Berkeley) 5/13/91";
+ #else
+-__RCSID("$NetBSD: store.c,v 1.17 2021/05/02 12:50:45 rillig Exp $");
+ #endif
+ #endif				/* not lint */
+ 
+diff -ruN larn.orig/tok.c larn/tok.c
+--- larn.orig/tok.c	2012-06-19 01:30:44.000000000 -0400
++++ larn/tok.c	2022-04-14 23:36:14.595860066 -0400
+@@ -3,7 +3,6 @@
+ /* tok.c		Larn is copyrighted 1986 by Noah Morgan. */
+ #include <sys/cdefs.h>
+ #ifndef lint
+-__RCSID("$NetBSD: tok.c,v 1.11 2012/06/19 05:30:44 dholland Exp $");
+ #endif				/* not lint */
+ 
+ #include <sys/types.h>
