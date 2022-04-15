@@ -1,12 +1,9 @@
 This is a Linux port of NetBSD Larn
 Source pulled from cvs with the following:
 
-CVSEDITOR=vi
+export CVSEDITOR=vi
 export CVSROOT="anoncvs@anoncvs.NetBSD.org:/cvsroot"
-CVS_RSH=ssh
-export CVSEDITOR
-export CVSROOT
-export CVS_RSH
+export CVS_RSH=ssh
 cvs checkout src/games/larn
 
 /usr/pkg/share/mk/ pulled from bootstrapped pkgsrc:
