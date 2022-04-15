@@ -13,7 +13,7 @@ cvs checkout src/games/larn
 
 cvs checkout pkgsrc
 cd pkgsrc/bootstrap
-./bootstrap.sh
+./bootstrap
 
 Dependencies are ncurses-devel and bmake. I built bmake from:
 https://github.com/arichardson/bmake
